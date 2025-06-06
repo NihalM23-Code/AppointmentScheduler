@@ -1,0 +1,82 @@
+[
+  {
+    "ContainingType": "AppointmentScheduling.Controllers.API.AppointmentApiController",
+    "Method": "ConfirmAppointment",
+    "RelativePath": "api/Appointment/ConfirmAppointment/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentScheduling.Controllers.API.AppointmentApiController",
+    "Method": "DeleteAppointment",
+    "RelativePath": "api/Appointment/DeleteAppointment/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentScheduling.Controllers.API.AppointmentApiController",
+    "Method": "GetCalendarData",
+    "RelativePath": "api/Appointment/GetCalendarData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentScheduling.Controllers.API.AppointmentApiController",
+    "Method": "GetCalendardataById",
+    "RelativePath": "api/Appointment/GetCalendardataById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppointmentScheduling.Controllers.API.AppointmentApiController",
+    "Method": "SaveCalendarData",
+    "RelativePath": "api/Appointment/SaveCalendarData",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "AppointmentScheduling.Models.ViewModels.AppointmentVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

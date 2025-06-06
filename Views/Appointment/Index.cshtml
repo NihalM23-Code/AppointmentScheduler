@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@model AppointmentScheduling.Models.ViewModels.AppointServiceDropDownVM
+
+<div class="row">
+    @if (TempData.ContainsKey("NewsAdminRegister"))
+    {
+        <div class="container">
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <strong>Account created for @TempData["NewsAdminRegister"]</strong>
+            </div>
+        </div>
+        
+    }
+    <div class="container">
+        @if(User.IsInRole(AppointmentScheduling.Utility.Helper.Admin))
+        {
+
+            <div class="row  align-items-end mb-3">
+                <div class="col-md-3">
+                <form method="post" asp-controller="Appointment" asp-action="Index" class="form-mb col-7">
+                    <div class=" form-group " id="divDoctorList">
+                        <label class="control-label" asp-for="DoctorId">Doctors</label>
+                        <select asp-for="DoctorId" asp-items="@Model.DoctorList" class="form-control select2" id="DoctorId">
+                        </select>
+                    </div>
+                </form>
+                </div>
+                <div class="col-md-2">
+                    <a asp-controller="Account" asp-action="Register" class="form-control btn btn-secondary">Register New Admin </a>
+                </div>
+            </div>
+        }
+        <div id="calendar"></div>
+        
+    </div>
+</div>
+@{
+    await Html.RenderPartialAsync("_AddEditAppointment", Model);
+}
+@* <footer class="border-top footer text-muted">
+    <div class="container">
+        <h4> Hello @HttpContextAccessor.HttpContext.Session.GetString("ssusername") !!</h4>
+    </div>
+</footer> *@
+
+ 
+
+@* @section Scripts {
+    <script>
+        $(document).ready(function () {
+            InitializeCalendar();
+        });
+
+        function InitializeCalendar() {
+            try {
+                $('#calendar').fullCalendar({
+                    timezone: false,
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+                    selectable: true,
+                    editable: false
+                });
+            } catch (e) {
+                console.error("Calendar error:", e);
+                alert(e);
+            }
+        }
+    </script>
+}
+ *@
